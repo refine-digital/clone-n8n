@@ -187,6 +187,16 @@ While similar to the WordPress cloner, the n8n version has key differences:
 
 ## Troubleshooting
 
+### Docker Not Running
+
+```
+Error: Docker is not running
+```
+
+**Solution**: Start Docker Desktop before running the script.
+
+The script checks if Docker is running at the start and will exit with a clear error message if Docker is not available.
+
 ### Infrastructure Not Running
 
 ```
