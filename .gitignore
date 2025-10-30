@@ -1,0 +1,42 @@
+# Log files
+*.log
+clone-*.log
+
+# Data archives
+*.tar.gz
+*.tar
+
+# Environment files
+.env
+.env.*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# System files
+Thumbs.db
+ehthumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Editor directories
+.vscode/
+.idea/
+*.sublime-*
+
+# n8n sites (these are cloned, not committed)
+local-*/
+
+# Testing
+test/
+*.test
