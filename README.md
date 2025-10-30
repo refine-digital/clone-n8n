@@ -6,14 +6,47 @@ A script to clone production n8n sites to your local development environment wit
 
 This script automates the process of cloning a production n8n site (including workflows, database, and configuration) to a local development environment. It's designed to work seamlessly with your existing infrastructure setup.
 
-## Prerequisites
+## Installation
 
+### Quick Install
+
+Clone and install the script globally:
+
+```bash
+git clone https://github.com/refine-digital/clone-n8n.git
+cd clone-n8n
+./install.sh
+```
+
+This installs `clone-n8n` to `~/.local/bin` for global CLI access.
+
+### Manual Installation
+
+If you prefer not to install globally, you can use the script directly:
+
+```bash
+git clone https://github.com/refine-digital/clone-n8n.git
+cd clone-n8n
+./clone-n8n.sh <infrastructure> <domain>
+```
+
+### Requirements
+
+After installation, ensure you have:
 - Docker and Docker Compose installed and running
 - Infrastructure already cloned and running (use `clone-infrastructure.sh` first)
 - SSH access configured to the production server
 - The infrastructure's nginx-proxy and required networks must be running
 
 ## Usage
+
+If installed globally via `install.sh`:
+
+```bash
+clone-n8n <infrastructure> <domain> [folder] [--clean]
+```
+
+Or use the script directly:
 
 ```bash
 ./clone-n8n.sh <infrastructure> <domain> [folder] [--clean]
@@ -30,16 +63,14 @@ This script automates the process of cloning a production n8n site (including wo
 ### Examples
 
 ```bash
-# Clone to default location
+# Using globally installed command
+clone-n8n dev-fi-01 ai.refine.digital
+clone-n8n dev-fi-01 ai.refine.digital ~/ProjectFiles/n8n/
+clone-n8n dev-fi-01 ai.refine.digital --clean
+
+# Or using the script directly
 ./clone-n8n.sh dev-fi-01 ai.refine.digital
-
-# Clone to current directory
 ./clone-n8n.sh dev-fi-01 ai.refine.digital .
-
-# Clone to specific folder
-./clone-n8n.sh dev-fi-01 ai.refine.digital ~/ProjectFiles/n8n/
-
-# Clean existing installation and re-clone
 ./clone-n8n.sh dev-fi-01 ai.refine.digital ~/ProjectFiles/n8n/ --clean
 ```
 
